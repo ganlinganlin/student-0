@@ -1,5 +1,6 @@
 # default
-
+# student
+学生个人画像
 ## Project setup
 ```
 npm install
