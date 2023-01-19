@@ -151,11 +151,31 @@
 				</el-tabs>
 			</el-main>
 		</el-container>
+
+		<el-container>
+			<el-main  class="chart0" style="width: 100%;height: 660px;">
+
+				<div  id="tre" style="width: 100%;height: 600px;" >
+
+				</div>
+			</el-main>
+			<el-main  style="width: 100%;height: 660px;">
+
+			<div  id="trenn" style="width: 100%;height: 600px;">
+
+			</div>
+			</el-main>
+		</el-container>
+
+
+
 	</div>
 </template>
 
 <script>
-	import wordcloudindex from './wordcloud1.js'
+	import wordcloudindex from './wordcloud1.js';
+	import * as echarts from 'echarts';
+
 	let defaultImg = require('../../assets/blank.png')
 	import {
 		Loading
@@ -756,6 +776,207 @@
 		},
 
 		mounted() {
+
+						// var chartDom = document.getElementById('tre');
+						var myChart = echarts.init(document.getElementById('tre'));
+			var option;
+			// Schema:
+			// date,AQIindex,PM2.5,PM10,CO,NO2,SO2
+			const dataBJ = [[55, 189, 56, 0.46, 18, 69, 100]];
+			const dataGZ = [[118, 50, 60, 1.383, 76, 11, 31]];
+			const dataSH = [[187, 143, 201, 1.39, 89, 53, 31]];
+			const lineStyle = {
+			width: 1,
+			opacity: 0.5
+			};
+			option = {
+			backgroundColor: '#161627',
+			title: {
+				text: 'AQI - Radar',
+				left: 'center',
+				textStyle: {
+				color: '#eee'
+				}
+			},
+			legend: {
+				bottom: 5,
+				data: ['Beijing', 'Shanghai', 'Guangzhou'],
+				itemGap: 20,
+				textStyle: {
+				color: '#fff',
+				fontSize: 14
+				},
+				selectedMode: 'single'
+			},
+			radar: {
+				indicator: [
+				{ name: 'AQI', max: 300 },
+				{ name: 'PM2.5', max: 250 },
+				{ name: 'PM10', max: 300 },
+				{ name: 'CO', max: 5 },
+				{ name: 'NO2', max: 200 },
+				{ name: 'SO2', max: 100 }
+				],
+				shape: 'circle',
+				splitNumber: 5,
+				axisName: {
+				color: 'rgb(238, 197, 102)'
+				},
+				splitLine: {
+				lineStyle: {
+					color: [
+					'rgba(238, 197, 102, 0.1)',
+					'rgba(238, 197, 102, 0.2)',
+					'rgba(238, 197, 102, 0.4)',
+					'rgba(238, 197, 102, 0.6)',
+					'rgba(238, 197, 102, 0.8)',
+					'rgba(238, 197, 102, 1)'
+					].reverse()
+				}
+				},
+				splitArea: {
+				show: false
+				},
+				axisLine: {
+				lineStyle: {
+					color: 'rgba(238, 197, 102, 0.5)'
+				}
+				}
+			},
+			series: [
+				{
+				name: 'Beijing',
+				type: 'radar',
+				lineStyle: lineStyle,
+				data: dataBJ,
+				symbol: 'none',
+				itemStyle: {
+					color: '#F9713C'
+				},
+				areaStyle: {
+					opacity: 0.1
+				}
+				},
+				{
+				name: 'Shanghai',
+				type: 'radar',
+				lineStyle: lineStyle,
+				data: dataSH,
+				symbol: 'none',
+				itemStyle: {
+					color: '#B3E4A1'
+				},
+				areaStyle: {
+					opacity: 0.05
+				}
+				},
+				{
+				name: 'Guangzhou',
+				type: 'radar',
+				lineStyle: lineStyle,
+				data: dataGZ,
+				symbol: 'none',
+				itemStyle: {
+					color: 'rgb(238, 197, 102)'
+				},
+				areaStyle: {
+					opacity: 0.05
+				}
+				}
+			]
+			};
+			option && myChart.setOption(option);
+
+
+			// var chartDom = document.getElementById('trenn');
+			var myChart = echarts.init(document.getElementById('trenn'));
+			var option1;
+			setTimeout(function () {
+			option1 = {
+				legend: {},
+				tooltip: {
+				trigger: 'axis',
+				showContent: false
+				},
+				dataset: {
+				source: [
+					['product', '2012', '2013', '2014', '2015', '2016', '2017'],
+					['Milk Tea', 56.5, 82.1, 88.7, 70.1, 53.4, 85.1],
+					['Matcha Latte', 51.1, 51.4, 55.1, 53.3, 73.8, 68.7],
+					['Cheese Cocoa', 40.1, 62.2, 69.5, 36.4, 45.2, 32.5],
+					['Walnut Brownie', 25.2, 37.1, 41.2, 18, 33.9, 49.1]
+				]
+				},
+				xAxis: { type: 'category' },
+				yAxis: { gridIndex: 0 },
+				grid: { top: '55%' },
+				series: [
+				{
+					type: 'line',
+					smooth: true,
+					seriesLayoutBy: 'row',
+					emphasis: { focus: 'series' }
+				},
+				{
+					type: 'line',
+					smooth: true,
+					seriesLayoutBy: 'row',
+					emphasis: { focus: 'series' }
+				},
+				{
+					type: 'line',
+					smooth: true,
+					seriesLayoutBy: 'row',
+					emphasis: { focus: 'series' }
+				},
+				{
+					type: 'line',
+					smooth: true,
+					seriesLayoutBy: 'row',
+					emphasis: { focus: 'series' }
+				},
+				{
+					type: 'pie',
+					id: 'pie',
+					radius: '30%',
+					center: ['50%', '25%'],
+					emphasis: {
+					focus: 'self'
+					},
+					label: {
+					formatter: '{b}: {@2012} ({d}%)'
+					},
+					encode: {
+					itemName: 'product',
+					value: '2012',
+					tooltip: '2012'
+					}
+				}
+				]
+			};
+			myChart.on('updateAxisPointer', function (event) {
+				const xAxisInfo = event.axesInfo[0];
+				if (xAxisInfo) {
+				const dimension = xAxisInfo.value + 1;
+				myChart.setOption({
+					series: {
+					id: 'pie',
+					label: {
+						formatter: '{b}: {@[' + dimension + ']} ({d}%)'
+					},
+					encode: {
+						value: dimension,
+						tooltip: dimension
+					}
+					}
+				});
+				}
+			});
+			myChart.setOption(option1);
+			});
+			option1 && myChart.setOption(option1);
+
+
 			this.drawBlankRadar();
 			this.autocheck();
 			
