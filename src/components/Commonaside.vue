@@ -2,7 +2,7 @@
 
 <template>
 
-      <div class="aside">
+      <div class="aside" >
             <el-menu 
             default-active="1-4-1" 
             class="el-menu-vertical-demo" 
