@@ -8,7 +8,7 @@ import echarts from "echarts";
 import china from "echarts/map/json/china.json"
 import qs from 'qs'
 import './http';
-
+import store from './store';
 
 
 Vue.prototype.GLOBAL = global_;
@@ -109,8 +109,10 @@ Vue.prototype.$sortByArr = sortByArr;
 Vue.prototype.$evil = evil;
 Vue.prototype.$errmsg = errorMsg;
 Vue.prototype.$param = getUrlParam;
+
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
 });
