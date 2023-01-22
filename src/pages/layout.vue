@@ -34,14 +34,14 @@
 		<!-- http://localhost:8080/#/analysis/consume -->
 
 		<el-container>
-			<el-aside width="200px">
+			 <el-aside width="auto">    <!--:width="$store.state.tab.isCollapse?    'auto' : '200px'" -->
 				<commonaside />
 			</el-aside>
-			<el-container>
-				<el-header>
+			<el-container class="header">
+				<el-header >
 					<commonheader />
 				</el-header>
-				<el-main>
+				<el-main >
 					Main
 					<router-view></router-view>
 				</el-main>
@@ -80,8 +80,14 @@
 	a{
 		text-decoration: none;
 	}
+	/* .el-aside {
+		position: fixed;
+	} */
 	.el-header {
 		padding: 0;
 	}
+	/* .header {
+		width:auto;
+	} */
 </style>
 

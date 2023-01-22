@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<!-- <div>
 		
 		<el-container style="height:450px;">
 			<el-aside width="450px" style="height: 100%;">
@@ -18,7 +18,6 @@
 				</el-card>
 			</el-aside>
 			<br>
-
 
 				<el-main  class="search" style="height: 100%;">
 									<el-carousel indicator-position="outside" height="350px" :autoplay="false">
@@ -46,7 +45,6 @@
 														<div slot="header" class="clearfix">
 															<span style="font-size: 18px">社交</span>
 														</div>
-														<!-- {{studentscore.avgcreditjd}} -->
 														<span style="font-size: 30px">社交牛人</span>
 
 													</el-card>
@@ -56,7 +54,6 @@
 														<div slot="header" class="clearfix">
 															<span style="font-size: 18px">图书馆</span>
 														</div>
-														<!-- {{studentscore.avgcreditjd}} -->
 														<span style="font-size: 29px">图书馆达人</span>
 
 													</el-card>
@@ -69,7 +66,6 @@
 														<div slot="header" class="clearfix">
 															<span style="font-size: 18px">宿舍</span>
 														</div>
-														<!-- {{studentscore.knowledge}} -->
 														<span style="font-size: 30px">早起晚归</span>
 													</el-card>
 												</el-col>
@@ -78,7 +74,6 @@
 														<div slot="header" class="clearfix">
 															<span style="font-size: 18px">消费</span>
 														</div>
-														<!-- {{studentscore.knowledge}} -->
 														<span style="font-size: 30px">小康</span>
 													</el-card>
 												</el-col>
@@ -87,7 +82,6 @@
 														<div slot="header" class="clearfix">
 															<span style="font-size: 18px">校园网</span>
 														</div>
-														<!-- {{studentscore.moral}} -->
 														<span style="font-size: 30px">上网先锋</span>
 													</el-card>
 												</el-col>
@@ -96,7 +90,6 @@
 														<div slot="header" class="clearfix">
 															<span style="font-size: 18px">毕业论文</span>
 														</div>
-														<!-- {{studentscore.sports}} -->
 														<span style="font-size: 30px">优秀毕设</span>
 													</el-card>
 												</el-col>
@@ -110,657 +103,207 @@
 		</el-container>
 		<br>
 	
-	</div>
+	</div> -->
+
+	<el-row>
+		<el-col :span="8">
+			<el-card class="box-card">
+				<div class="user"> 
+					<img src="../../../public/lhp.jpg" alt="">
+					<div class="userinfo">
+						<p class="name1">某某某</p>
+						<p class="idcard">202232803056</p>
+					</div>
+				</div>
+				<div class="login-info">
+					<p class="sd">上次登录时间：<span class="sp">2022-12-12</span></p>
+					<p class="sd">上次登录地点：<span class="sp">天津</span></p>
+
+				</div>
+
+			</el-card >
+			
+			<el-card class="box-card1">
+					
+				<el-row >
+					<el-col :span="6" class="el1">						
+						<span class="spp00">性别：</span>
+					</el-col>
+					<el-col :span="18" class="el1">						
+						<span class="spp01">男</span>
+					</el-col>
+					<el-col :span="6" class="el1">						
+						<span class="spp00">年龄：</span>
+					</el-col>
+					<el-col :span="18" class="el1">						
+						<span class="spp01">24</span>
+					</el-col>
+					<el-col :span="6" class="el1">						
+						<span class="spp00">民族：</span>
+					</el-col>
+					<el-col :span="18" class="el1">						
+						<span class="spp01">汉族中国共产主义青年团团员</span>
+					</el-col>
+				</el-row>
+			</el-card>
+				
+			<el-card class="box-card1">
+				<el-row >
+
+					<el-col :span="6" class="el1">						
+						<span class="spp00">班级：</span>
+					</el-col>
+					<el-col :span="18" class="el1">						
+						<span class="spp01">计算机科学与技术X-1</span>
+					</el-col>
+					<el-col :span="6" class="el1">						
+						<span class="spp00">政治面貌：</span>
+					</el-col>
+					<el-col :span="18" class="el1">						
+						<span class="spp01">中国共产主义青年团团员</span>
+					</el-col>
+				</el-row>
+			
+
+				<!-- <el-row >
+
+					<el-col :span="12" class="el1">						
+						<span class="spp00">班级：</span>
+					</el-col>
+					<el-col :span="12" class="el1">						
+						<span class="spp01">计算机科学与技术X-1</span>
+					</el-col>
+					<el-col :span="12" class="el1">						
+						<span class="spp00">政治面貌：</span>
+					</el-col>
+					<el-col :span="12" class="el1">						
+						<span class="spp01">中国共产主义青年团团员</span>
+					</el-col>
+				</el-row>
+			 -->
+			</el-card>
+		</el-col>
+
+		<el-col :span="16">
+			<div class="num" >
+				<el-card @click="clickMenu(item)" class="el012" v-for="item in countData" :index="item.name" :key="item.key" :body-style="{display : 'flex'}">
+						
+						<i class="icon" :class="`el-icon-${item.icon}`" :style="{background:item.color}"></i>
+						<div class="detail">
+							<p class="valuee">{{ item.value }}</p>
+							<p class="keyy">{{ item.key }}</p>
+						</div>
+					</el-card>
+
+			</div>
+
+			<div class="num" >
+				<el-card class="el2" v-for="item in countData2" :key="item.key" :body-style="{display : 'flex', padding:0}">
+					
+					<i class="icon" :class="`el-icon-${item.icon}`" :style="{background:item.color}"></i>
+					<div class="detail">
+						<p class="valuee">{{ item.value }}</p>
+						<p class="keyy">{{ item.key }}</p>
+					</div>
+				</el-card>
+			</div>
+
+			<div class="num" >
+					<el-card class="el3" v-for="item in countData3" :key="item.key" :body-style="{display : 'flex', padding:0}">
+						
+						<i class="icon" :class="`el-icon-${item.icon}`" :style="{background:item.color}"></i>
+						<div class="detail">
+							<p class="valuee">{{ item.value }}</p>
+							<p class="keyy">{{ item.key }}</p>
+						</div>
+					</el-card>
+
+			</div>
+
+
+		</el-col>
+  </el-row>
+	
 </template>
 
 <script>
-	import wordcloudindex from './wordcloud1.js'
-	let defaultImg = require('../../assets/blank.png')
-	import {
-		Loading
-	} from 'element-ui';
+import { getData } from '../../api'
 	export default {
 		data() {
 			return {
-				stuForm: {
-					stuid: ''
-				},
-				calendarData: [{
-						months: ['09', '11'],
-						days: ['15'],
-						year: ['2019'],
-						things: '迟到'
-					},
-					{
-						months: ['11'],
-						days: ['20'],
-						things: '缺勤'
-					}
-				],
-				datevalue: new Date(),
-				activities: [{
-					content: '活动按期开始',
-					timestamp: '2018-04-15'
-				}, {
-					content: '通过审核',
-					timestamp: '2018-04-13'
-				}, {
-					content: '创建成功',
-					timestamp: '2018-04-11'
-				}],
-				labelPosition: 'top',
-				wordcloud: {
-					stopwd: '',
-					userdict: ''
-				},
-				flag: 3,
-				studentscore: {
-					avg: '无',
-					credit: '无',
-					avgcreditjd: '无',
-					moral: '无',
-					knowledge: '无',
-					sports: '无',
-					top1: {
-						name: '无',
-						score: '无'
-					},
-					top2: {
-						name: '无',
-						score: '无'
-					},
-					top3: {
-						name: '无',
-						score: '无'
-					},
-					topscore: '无',
-					sorted: '无',
-					fails: '无'
-
-				},
-				mks: [],
-				savemsg: '保存',
-				imagePathPrefix: '',
-				imagePath: defaultImg,
-				searchinput: '',
-				stuadvices: [], //搜索建议列表
-				state: '', //搜索框值
-				timeout: null,
-				drawer: false,
-				direction: 'ltr',
-				activeName: 'stuscore',
-				options: [{
-						value: '0',
-						label: '请选择学期'
+					countData: [{
+						key: '成绩',
+						value: '学霸',
+						icon: 'circle-check',
+						color:'#5ab1ef'
 					}, {
-						value: '2019-2020',
-						label: '2019-2020'
-					},
-					{
-						value: '2020-2021',
-						label: '2020-2021'
+						key: '科研',
+						icon: 'medal-1',
+						value: '科研大神',
+						color:'#5ab1ef'
+					}
+					
+				],
+				countData2: [{
+						key: '宿舍',
+						icon: 'location-outline',
+						value: '早起鸟',
+						color:'#2ec7c9'
+					}, {
+						key: '图书馆',
+						icon: 's-management',
+						value: '图书馆达人',
+						color:'#2ec7c9'
 					}
 				],
-				value: '2019-2020',
-				tableData: [{
-					key: '学号',
-					value: '202232805021'
-				}, {
-					key: '姓名',
-					value: '张睿中'
-				}, {
-					key: '性别',
-					value: '男'
-				}, {
-					key: '年级',
-					value: '2022级'
-				}, {
-					key: '专业',
-					value: '人工智能'
-				}, {
-					key: '班级',
-					value: 'S22Z2859'
-				}, {
-					key: '民族',
-					value: '汉族'
-				}
-				// , {
-				// 	key: '政治面貌',
-				// 	value: '暂无数据'
-				// }, {
-				// 	key: '家庭住址',
-				// 	value: '暂无数据'
-				// }, {
-				// 	key: '出生日期',
-				// 	value: '暂无数据',
-				// }, {
-				// 	key: '寝室',
-				// 	value: '暂无数据'
-				// }, {
-				// 	key: '学生类型',
-				// 	value: '暂无数据'
-				// }
-			]
+					countData3: [{
+						key: '消费',
+						icon: 'shopping-cart-full',
+						value: '小康生活',
+						color:'#ffb980'
+					}, {
+						key: '社交',
+						icon: 'ship',
+						value: '社牛',
+						color:'#ffb980'
+					}, {
+						key: '校园网',
+						icon: 's-platform',
+						value: '校园网榜首',
+						color:'#ffb980'
+					}
+					
+				]
+					
+				
 
 			}
 		},
 		methods: {
-			onSubmitPerson() {
-				let sno = this.state;
-				let flag = true;
-				if (sno.match(/^[0-9]*$/)) {
-					let loadingInstance = Loading.service({
-						fullscreen: true
-					});
-					this.$http.get("stuAnalysis/searchstu/" + sno)
-						.then(({
-							data
-						}) => {
-							this.tableData = [{
-								key: '学号',
-								value: data.studentno
-							}, {
-								key: '姓名',
-								value: data.studentname
-							}, {
-								key: '性别',
-								value: data.sex
-							}, {
-								key: '年级',
-								value: data.termyear
-							}, {
-								key: '专业',
-								value: data.major
-							}, {
-								key: '班级',
-								value: data.class
-							}, {
-								key: '民族',
-								value: data.mz
-							}, {
-								key: '政治面貌',
-								value: data.zzmm
-							}, {
-								key: '家庭住址',
-								value: data.address
-							}, {
-								key: '出生日期',
-								value: data.birthday,
-							}, {
-								key: '寝室',
-								value: data.buildingname + data.roomnum
-							}, {
-								key: '学生类型',
-								value: data.stutype
-							}]
+			clickMenu(item) {
+          if(this.$route.path !== item.path && !(this.$route.path == '/person'&& (item.pah == '/'))){
+            this.$router.push(item.path)
 
-							this.drawMksRadar(this.tableData[0]["value"], this.value);
-							flag = true;
-						})
-						.catch(err => {
-							alert(this.$errmsg(err));
-							loadingInstance.close();
-							this.tableData = [];
-							flag = true;
-						});
-					this.$http.get("stuAnalysis/stuwordcloud/" + sno)
-						.then(({
-							data
-						}) => {
-							this.imagePath = data;
-							loadingInstance.close();
-						})
-						.catch(err => {
-							// alert(this.$errmsg(err));
-							this.imagePathPrefix = '';
-							this.imagePath = defaultImg;
-						});
-					this.getStudentScore(sno, '2018-2019');
-
-
-				} else {
-					alert("请输入学号进行查询");
-					loadingInstance.close();
-					this.tableData = [];
-				}
-
-
-
-			},
-			stubehavior(tab, event) {
-				console.log(tab.name);
-				switch (tab.name) {
-					case "stuscore":
-						break;
-					case "trend":
-						this.drawSorcetrend();
-						break;
-					case "reward":
-
-						break;
-					case "punish":
-
-						break;
-					case "kq":
-
-						break;
-				}
-			},
-			changeTyChart() {
-
-			},
-			querySearch(queryString, cb) {
-				var stuadvices = this.stuadvices;
-				var results = queryString ? stuadvices.filter(this.createFilter(queryString)) : stuadvices;
-				// 调用 callback 返回建议列表的数据
-				clearTimeout(this.timeout);
-				this.timeout = setTimeout(() => {
-					cb(results);
-				}, 2000 * Math.random());
-			},
-			createFilter(queryString) {
-				return (state) => {
-					return (state.name.toLowerCase().indexOf(queryString.toLowerCase()) === 0);
-				};
-			},
-			handleSelect(item) {
-				console.log(item);
-			},
-			drawerhandleClose(done) {
-				this.$confirm('确认关闭？')
-					.then(_ => {
-						this.wordcloud.stopwd = '';
-						this.wordcloud.userdict = '';
-						done();
-					})
-					.catch(_ => {});
-
-			},
-			saveWordCloudSettings() {
-				this.flag = 1;
-				this.savemsg = '保存中';
-				let stopwd = this.wordcloud.stopwd;
-				let userdict = this.wordcloud.userdict;
-				let stoplist = stopwd.split(" ");
-				let userdictlist = userdict.split(" ");
-				if (stoplist.length == 1 && stoplist[0].length == 0) {
-					this.flag += 1;
-				} else {
-					this.$http.put("admin/addstopwords", this.$qs.stringify({
-							"stopwd": stoplist
-						}, {
-							indices: false
-						}))
-						.then(({
-							data
-						}) => {
-							this.addswdmsg = data;
-							this.flag += 1;
-						})
-						.catch(err => {
-							alert(this.$errmsg(err));
-							this.flag += 1;
-						});
-				}
-				if (userdictlist.length == 1 && userdictlist[0].length == 0) {
-					this.flag += 1;
-				} else {
-					this.$http.put("admin/adduserdict", this.$qs.stringify({
-							"userdict": userdictlist
-						}, {
-							indices: false
-						}))
-						.then(({
-							data
-						}) => {
-							this.addudtmsg = data;
-							this.flag += 1;
-						})
-						.catch(err => {
-							alert(this.$errmsg(err));
-							this.flag += 1;
-						});
-				}
-
-			},
-
-			/**
-			 * @param {String} sno 学号
-			 * @param {String} xuenian 学年
-			 * 三育雷达图
-			 */
-			drawMksRadar(sno, xuenian) {
-
-				let myChart = this.$echarts.init(document.getElementById("mksradar"));
-				myChart.showLoading();
-				this.$http.post("stuAnalysis/mks/" + xuenian + "/" + sno)
-					.then(({
-						data
-					}) => {
-						this.mks = [];
-						this.mks.push(data["m"]);
-						this.mks.push(data["k"]);
-						this.mks.push(data["s"]);
-						this.studentscore.moral = (data['m'] * 25).toFixed(2);
-						this.studentscore.knowledge = (data['k'] * 70).toFixed(2);
-						this.studentscore.sports = (data['s'] * 5).toFixed(2);
-						let option = {
-							title: {
-								text: '学生综合评价',
-								textStyle: {
-									fontSize: 12
-								}
-							},
-							tooltip: {},
-
-							radar: {
-								// shape: 'circle',
-								name: {
-									textStyle: {
-										color: '#fff',
-										backgroundColor: '#999',
-										borderRadius: 3,
-										padding: [3, 5]
-									}
-								},
-								indicator: [{
-										name: '德育',
-										max: 1
-									},
-									{
-										name: '智育',
-										max: 1
-									},
-									{
-										name: '体育',
-										max: 1
-									}
-								]
-							},
-							series: [{
-								name: '三育',
-								type: 'radar',
-								areaStyle: {
-									normal: {}
-								},
-								data: [{
-									value: this.mks,
-									name: '三育'
-								}]
-							}]
-						};
-						myChart.hideLoading();
-						myChart.setOption(option);
-					})
-					.catch(err => {
-						myChart.hideLoading();
-
-					})
-			},
-			drawBlankRadar() {
-				let myChart = this.$echarts.init(document.getElementById("mksradar"));
-				let option = {
-					title: {
-						text: '学生综合评价',
-						textStyle: {
-							fontSize: 12
-						}
-					},
-					tooltip: {},
-
-					radar: {
-						// shape: 'circle',
-						name: {
-							textStyle: {
-								color: '#fff',
-								backgroundColor: '#999',
-								borderRadius: 3,
-								padding: [3, 5]
-							}
-						},
-						indicator: [{
-								name: '德育',
-								max: 1
-							},
-							{
-								name: '智育',
-								max: 1
-							},
-							{
-								name: '体育',
-								max: 1
-							}
-						]
-					},
-					series: [{
-						name: '三育',
-						type: 'radar',
-						areaStyle: {
-							normal: {}
-						},
-						data: [{
-							value: this.mks,
-							name: '三育'
-						}]
-					}]
-				};
-				myChart.setOption(option);
-			},
-
-			/**
-			 * 获取学生成绩面板数据
-			 */
-			getStudentScore(sno, xuenian) {
-				this.$http.post("stuAnalysis/courses/" + xuenian + "/" + sno + "/3")
-					.then(({
-						data
-					}) => {
-						this.studentscore.top1.name = data[0]['cname'];
-						this.studentscore.top2.name = data[1]['cname'];
-						this.studentscore.top3.name = data[2]['cname'];
-						this.studentscore.top1.score = data[0]['score'];
-						this.studentscore.top2.score = data[1]['score'];
-						this.studentscore.top3.score = data[2]['score'];
-						this.studentscore.topscore = data[0]['score'];
-					})
-					.catch(err => {
-
-					});
-
-				this.$http.post("stuAnalysis/courses/" + xuenian + "/" + sno + "/50")
-					.then(({
-						data
-					}) => {
-						let sum = 0;
-						let credit = 0;
-						let creditjd = 0;
-						data.map(d => {
-							sum += d['score'];
-							if (d['score'] >= 60) {
-								credit += d['credit'];
-								creditjd += d['credit'] * d['jd'];
-							}
-						});
-						this.studentscore.avg = (sum / data.length).toFixed(2);
-						this.studentscore.credit = credit.toFixed(2);
-						this.studentscore.avgcreditjd = (creditjd / credit).toFixed(2);
-
-					})
-					.catch(err => {
-						alert(this.$errmsg(err));
-					});
-				this.$http.get("stuAnalysis/rank/" + xuenian + "/" + sno)
-					.then(({
-						data
-					}) => {
-						this.studentscore.sorted = data;
-					});
-				this.$http.post("stuAnalysis/searchfailsRate/" + xuenian + "/" + sno)
-					.then(({
-						data
-					}) => this.studentscore.fails = data * 100);
-			},
-
-
-			/**
-			 * 成绩趋势
-			 *
-			 */
-			drawSorcetrend() {
-				//TODO
-				let myChart = this.$echarts.init(document.getElementById("trendchart"));
-				let colors = ['#5793f3', '#d14a61', '#675bba'];
-				let option = {
-					tooltip: {
-						trigger: 'axis',
-						axisPointer: {
-							type: 'cross'
-						}
-					},
-					legend: {
-						data: ['德育分', '智育分', '体育分']
-					},
-					xAxis: [{
-						type: 'category',
-						axisTick: {
-							alignWithLabel: true
-						},
-						data: ['2017-2018', '2018-2019', '2019-2020']
-					}],
-					yAxis: [{
-							type: 'value',
-							name: '德育分',
-							min: 15,
-							max: 25,
-							interval: 1,
-							position: 'right',
-							axisLine: {
-								lineStyle: {
-									color: colors[0]
-								}
-							},
-							axisLabel: {
-								formatter: '{value} '
-							}
-						},
-						{
-							type: 'value',
-							name: '智育分',
-							min: 60,
-							max: 70,
-							interval: 2,
-							position: 'right',
-							offset: 80,
-							axisLine: {
-								lineStyle: {
-									color: colors[1]
-								}
-							},
-							axisLabel: {
-								formatter: '{value} '
-							}
-						},
-						{
-							type: 'value',
-							name: '体育分',
-							min: 0,
-							max: 5,
-							position: 'left',
-							axisLine: {
-								lineStyle: {
-									color: colors[2]
-								}
-							},
-							axisLabel: {
-								formatter: '{value}'
-							},
-							interval: 1
-						}
-					],
-					series: [{
-							name: '德育分',
-							type: 'line',
-							data: [20, 21.5, 22]
-						},
-						{
-							name: '智育分',
-							type: 'line',
-							yAxisIndex: 1,
-							data: [62, 61.5, 62.5]
-						},
-						{
-							name: '体育分',
-							type: 'line',
-							yAxisIndex: 2,
-							data: [4.5, 4, 3.8]
-						}
-					]
-				};
-
-				myChart.setOption(option);
-			},
-			
-			autocheck(){
-				let sno = this.$param("sno");
-				if (sno != "" && sno.match(/^[0-9]*$/)){
-					this.state = this.$param("sno");
-					this.onSubmitPerson();
-				}
-			}
-
-
+          }
+          
+        }
 		},
 		components: {
 
 		},
 
 		mounted() {
-			this.drawBlankRadar();
-			this.autocheck();
+			getData().then((data) => {
+				console.log(data)
+			})
 			
 			
-		},
-		beforeMount(){
-			console.log("bef",this.$param("sno"));
-		},
-		watch: {
-			state(newv, oldv) {
-				if (newv.match(/^[\u4e00-\u9fa5]+$/)) {
-					if (newv.length > 10) {
-						return;
-					}
-					let data = {
-						"sname": newv
-					}
-					this.$http.post("stuAnalysis/searchadv", this.$qs.stringify(data))
-						.then(({
-							data
-						}) => {
-							this.stuadvices = data;
-						})
-						.catch(err => {
-							if (err.response.status != 404) {
-								alert(this.$errmsg(err));
-							}
-
-						})
-
-				}
-			},
-			flag(n) {
-				if (n == 3) {
-					this.$message({
-						message: '保存成功！',
-						type: 'success'
-					});
-				}
-			}
 		}
 	}
 </script>
 
 <style scoped="scoped">
-	.el-main,
+	/* .el-main,
 	.el-aside {
 		margin: 10px;
 		background-color: #E9EEF3;
@@ -797,7 +340,6 @@
 	}
 
 	.box-card {
-		/* height: 99.5%; */
 		height: 450px;
 		overflow-y: scroll;
 	}
@@ -851,5 +393,147 @@
 		font-size: 16px;
 		margin-top: 5px;
 		background-color: yellow;
+	} */
+	.box-card {
+		border-radius: 3%;
+		 padding:20px;
 	}
+	.box-card1 {
+		border-radius: 3%;
+		margin-top: 20px;
+		padding:20px;
+		/* height: 200px;		 */
+	}
+	.user {
+		display: flex;
+		align-items: center;
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid #ccc;
+	}
+
+	img {
+		display: flex;
+
+		margin-left: 30px;
+		width: 150px;	
+		height: 150px;
+		border-radius: 12%;
+		}
+		.name1 {
+			display: flex;
+
+			font-size: 32px;
+			width: 100%;
+			margin-bottom: 10px;
+			margin-left: 32px;
+		}
+		.idcard {
+			display: flex;
+
+			font-size: 24px;
+			width: 100%;
+			margin-left: 32px;
+			color: #999999;
+		}
+		.sd {
+			display: flex;
+
+			line-height: 28px;
+			font-size: 14px;
+			color: #999999;
+			text-align: left;
+			margin-left: 30px;
+
+		}
+		.sp {
+			display: flex;
+
+			color: #000000;
+			margin-left: 66px;
+
+		}
+		.spp00 {
+
+			line-height: 36px;
+			font-size: 18px;
+			color: #666666;
+			text-align:left;
+			/* border-bottom: 1px solid #ccc; */
+
+		}
+		.spp01 {
+
+			line-height: 36px;
+			font-size: 18px;
+			color: #000000;
+			text-align:left;
+			/* border-bottom: 1px solid #ccc; */
+
+			}
+		.el1 {
+			border-right: 1px solid #ccc;
+
+		}
+
+		.num {
+			display: flex;
+			justify-content: space-between;
+
+			/* justify-content: center; */
+
+		}
+		.el012 {
+			width: 50%;
+			margin-bottom: 20px;
+			margin-left: 60px;
+			margin-right: 10px;
+			border-radius: 3%;
+			padding:0;
+		}
+		.el2 {
+			width: 50%;
+			margin-bottom: 20px;
+			margin-left: 60px;
+			margin-right: 10px;
+
+		}
+		.el3 {
+			width: 32%;
+			margin-bottom: 20px;
+			margin-left: 60px; 
+			margin-right: 10px;
+			justify-content: center;
+
+
+		}
+		.icon {
+			width: 80px;
+			height: 80px;
+			font-size: 30px;
+			text-align: center;
+			line-height: 80px;
+			color: #fff;
+		}
+		.detail {
+			/* margin-left: 30px; */
+		    margin:0 auto;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			text-align: center;
+		}
+		.keyy {
+			font-size: 22px;
+			color: #999;
+			text-align: center;
+		}
+		.valuee{
+			font-size: 30px;
+			margin-bottom: 6px;
+			line-height: 30px;
+			height: 30px;
+			text-align: left;
+		}
 </style>

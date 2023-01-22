@@ -110,9 +110,15 @@ Vue.prototype.$evil = evil;
 Vue.prototype.$errmsg = errorMsg;
 Vue.prototype.$param = getUrlParam;
 
+
+router.afterEach((to,from,next) => {
+    window.scrollTo(0,0);
+});
+
+
 new Vue({
   el: '#app',
   router,
   store,
   render: h => h(App)
-});
+}).$mount('#app');

@@ -10,9 +10,9 @@
             @close="handleClose" 
             :collapse="isCollapse"
             background-color="#187bd0"
-            text-color="#969c94"
-            active-text-color="#ffffff"
-            
+            text-color=#ffffff    
+            active-text-color="#00e500"
+
             >
             <img src="../../public/hebut1.png"  class="img"/>            
             <!-- <div class="h3">
@@ -23,7 +23,7 @@
                 <span slot="title">{{ item.label}}</span>
                 </el-menu-item>
 
-                <el-submenu v-for="item in hasChildren" :key="item.label" :index="item.label">
+                <!-- <el-submenu v-for="item in hasChildren" :key="item.label" :index="item.label">
                     <template slot="title">
                         <i :class="`el-icon-${item.icon}`"></i>
                         <span slot="title">{{ item.label}}</span>
@@ -32,7 +32,7 @@
                         <i ></i>
                         <el-menu-item @click="clickMenu(subItem)" :class="`el-icon-${subItem.icon}`" :index="subItem.path">{{ subItem.label }}</el-menu-item>
                     </el-menu-item-group>
-                </el-submenu>
+                </el-submenu> -->
 
                 <!-- <el-menu-item index="2">
                 <i class="el-icon-s-platform"></i>
@@ -80,6 +80,10 @@
     .el-menu-vertical-demo:not(.el-menu--collapse) {
       width: 200px;
       min-height: 400px;
+      /* position: fixed; */
+      /* border-right: none; */
+      border: none;
+
     }
     .el-menu{
         height: 100vh;
@@ -100,8 +104,8 @@
     }
     .aside{
       height: 100%;
-      overflow-x: hidden;
-      overflow-y: hidden;
+      /* overflow-x: hidden;
+      overflow-y: hidden; */
     }
 
   </style>
@@ -111,6 +115,7 @@
     export default {
       data() {
         return { 
+          
           menuData: [ 
             {
                 path: '/person',
@@ -204,7 +209,7 @@
           console.log(key, keyPath);
         },
         clickMenu(item) {
-          if(this.$route.path !== item.path && !(this.$route.path == '/person'&& (item.payh == '/'))){
+          if(this.$route.path !== item.path && !(this.$route.path == '/person'&& (item.pah == '/'))){
             this.$router.push(item.path)
 
           }

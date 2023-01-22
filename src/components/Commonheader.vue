@@ -2,7 +2,7 @@
 
 <template>
 
-    <div class="header-container">
+    <div class="header-container" >
         <div class="l-content">
             <el-button @click="handleMenu" class="button1" icon="el-icon-menu"  size="mini"></el-button>
             <span class="text">河工画像</span>
@@ -14,7 +14,7 @@
 
             <el-dropdown>
                 <span class="el-dropdown-link">
-                    <img src="../../public/hebut.png"  class="img2"/>            
+                    <img src="../../public/lhp.jpg"  class="img2"/>            
                 </span>
                 <el-dropdown-menu slot="dropdown">
                     <el-dropdown-item>个人中心</el-dropdown-item>
@@ -37,7 +37,7 @@
         
       }
     },
-    method: {
+    methods: {
         handleMenu() {
             this.$store.commit('collapseMenu')
         }
@@ -50,6 +50,7 @@
 </script>
 
 <style>
+    
     .header-container{
         padding: 0 20px;
         background-color:#f3f3f3;
@@ -57,6 +58,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
+        
     }
     .el-button {
         margin: 0;
@@ -66,7 +69,7 @@
         width: 40px;
         height: 40px;
         background-color: #1484c6;
-        border-radius: 36%;
+        border-radius: 12%;
 
     }
     .button1 {

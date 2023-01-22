@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
 	<div>
 		<el-container class="alll">
 			<el-main class="alll" style="height: auto;width: 400px;">
@@ -34,7 +34,6 @@
 													<span style="font-size: 150%;">开题报告</span>
 												</div>
 												<p style="font-size: 350%;">优秀</p>
-												<!-- <div id="sexcount" style="width: 280px;height: 280px;">性别统计</div> -->
 											</el-card>
 										</el-col>
 										
@@ -60,7 +59,6 @@
 									</el-row>
 								</el-main>
 								<el-main>
-									<!-- <div id="stuMap" style="width: 500px;height: 350px;"></div> -->
 									<el-row :gutter="8">
 										<el-col :span="12">
 											<el-card shadow="always">
@@ -68,7 +66,6 @@
 													<span style="font-size: 150%;">中期答辩</span>
 												</div>
 												<p style="font-size: 350%;">优秀</p>
-												<!-- <div id="nationcount" style="width: 280px;height: 280px;">民族统计</div> -->
 											</el-card>
 										</el-col>
 										<el-col :span="12">
@@ -77,14 +74,12 @@
 													<span style="font-size: 150%;">预答辩</span>
 												</div>
 												<p style="font-size: 350%;">优秀</p>
-												<!-- <div id="pscount" style="width: 280px;height: 280px;">政治面貌统计</div> -->
 											</el-card>
 										</el-col>
 									</el-row>
 								</el-main>
 							</el-container>
 						</el-tab-pane>
-						<!-- <el-tab-pane label="班级成员" name="members">
 							<el-container>
 								<el-main>
 							<el-table :data="stuList" style="width: 100%" max-height="500"> 
@@ -132,15 +127,15 @@
 						</el-tab-pane>
 						<el-tab-pane label="成绩" name="score">成绩</el-tab-pane>
 						<el-tab-pane label="考勤" name="kq">考勤</el-tab-pane>
-						<el-tab-pane label="任课老师信息" name="teacher">任课老师信息</el-tab-pane> -->
+						<el-tab-pane label="任课老师信息" name="teacher">任课老师信息</el-tab-pane> 
 					</el-tabs>
 				</template>
 			</el-main>
 		</el-container>
 	</div>
-</template>
+</template> -->
 
-<script>
+<!-- <script>
 	export default {
 		data() {
 			return {
@@ -551,9 +546,9 @@
 			// 	});
 		}
 	}
-</script>
+</script> -->
 
-<style scoped="scoped">
+<!-- <style scoped="scoped">
 	.searchclass {
 		margin: 10px;
 		background-color: #E9EEF3;
@@ -593,4 +588,253 @@
 		padding: 0;
 	}
 	
+</style> -->
+
+
+
+<template>
+
+	<el-row>
+		<div class="fenge" >
+			<el-col :span="6">
+				<el-card class="boxcard">
+					<div > 
+						<div class="tubiao"> 
+							<i  class="el-icon-zoom-in" ></i>
+							<div>
+								<span class="yu00">已退回</span>
+							</div>
+						</div>
+						<el-row >
+							<el-col :span="24" class="elcol1">						
+								<span class="yu0">基于拓扑优化图卷积网络的网络表示学习方法研究</span>
+							</el-col>
+							<el-col :span="12" class="yu1">						
+								<span class="spp00">报告时间：</span>
+							</el-col>
+							<el-col :span="12" class="yu2">						
+								<span class="spp01">男</span>
+							</el-col>
+							<el-col :span="12" class="yu1">						
+								<span class="spp00">报告地点：</span>
+							</el-col>
+							<el-col :span="12" class="yu2">						
+								<span class="spp01">24</span>
+							</el-col>
+
+						</el-row>
+					</div>
+
+				</el-card >
+				
+			</el-col>
+
+			<el-col :span="6">
+				<el-card class="boxcard">
+					<div > 
+						<div class="tubiao"> 
+							<i  class="el-icon-help" ></i>
+							<div>
+								<span class="yu00">通过</span>
+							</div>
+						</div>
+						<el-row >
+							<el-col :span="24" class="elcol1">						
+								<span class="yu0">基于拓扑优化图卷积网络的网络表示学习方法研究</span>
+							</el-col>
+							<el-col :span="12" class="yu1">						
+								<span class="spp00">报告时间：</span>
+							</el-col>
+							<el-col :span="12" class="yu2">						
+								<span class="spp01">男</span>
+							</el-col>
+							<el-col :span="12" class="yu1">						
+								<span class="spp00">报告地点：</span>
+							</el-col>
+							<el-col :span="12" class="yu2">						
+								<span class="spp01">24</span>
+							</el-col>
+
+						</el-row>
+					</div>
+
+				</el-card >
+				
+			</el-col>
+
+			<el-col :span="6">
+				<el-card class="boxcard">
+					<div > 
+						<div class="tubiao"> 
+							<i   class="el-icon-circle-check" ></i>
+							<div>
+								<span class="yu00">通过</span>
+							</div>
+						</div>
+						<el-row >
+							<el-col :span="24" class="elcol1">						
+								<span class="yu0">基于拓扑优化图卷积网络的网络表示学习方法研究</span>
+							</el-col>
+							<el-col :span="12" class="yu1">						
+								<span class="spp00">报告时间：</span>
+							</el-col>
+							<el-col :span="12" class="yu2">						
+								<span class="spp01">男</span>
+							</el-col>
+							<el-col :span="12" class="yu1">						
+								<span class="spp00">报告地点：</span>
+							</el-col>
+							<el-col :span="12" class="yu2">						
+								<span class="spp01">24</span>
+							</el-col>
+
+						</el-row>
+					</div>
+
+				</el-card >
+				
+			</el-col>
+
+			<el-col :span="6">
+				<el-card class="boxcard">
+					<div > 
+						<div class="tubiao"> 
+							<i  class="el-icon-check" ></i>
+							<div>
+								<span class="yu00">通过</span>
+							</div>
+						</div>
+						<el-row >
+							<el-col :span="24" class="elcol1">						
+								<span class="yu0">基于拓扑优化图卷积网络的网络表示学习方法研究</span>
+							</el-col>
+							<el-col :span="12" class="yu1">						
+								<span class="spp00">报告时间：</span>
+							</el-col>
+							<el-col :span="12" class="yu2">						
+								<span class="spp01">男</span>
+							</el-col>
+							<el-col :span="12" class="yu1">						
+								<span class="spp00">报告地点：</span>
+							</el-col>
+							<el-col :span="12" class="yu2">						
+								<span class="spp01">24</span>
+							</el-col>
+
+						</el-row>
+					</div>
+
+				</el-card >
+				
+			</el-col>
+		</div>
+  </el-row>
+	
+</template>
+
+
+
+
+<style>
+	.fenge {
+		justify-content: center;
+
+	}
+	.el-card__body{
+		padding:0;
+	}
+	.elcol1 {
+		margin-top: 10px;
+
+	}
+	.boxcard{
+		width: 75%;
+		height: 320px;
+		background-color: #A24536;
+		margin: auto;
+	}
+	.tubiao{
+		height: 100px;
+		background-color: #BE4E3A;
+		border-radius: 0 0 36% 36%;
+	}
+	.el-icon-circle-check{
+		font-size: 40px;
+		color: #fff;
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+
+		justify-content: center;
+
+			/* font-size: 30px; */
+	}
+	.el-icon-zoom-in{
+		font-size: 40px;
+		color: #fff;
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+
+		justify-content: center;
+
+	}
+	.el-icon-check{
+		font-size: 40px;
+		color: #fff;
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+
+		justify-content: center;
+
+	}	
+	.el-icon-help{
+		font-size: 40px;
+		color: #fff;
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+
+		justify-content: center;
+
+	}
+
+	.yu00{
+		font-size: 24px;
+		color: #fff;
+	}
+	.yu0{
+		font-size: 20px;
+		color: #fff;
+
+	}
+	.yu1 {
+			border-right: 1px solid #ccc;
+			margin-top: 20px;
+
+		}
+	.yu2 {
+		margin-top: 20px;
+
+	}
+	.spp00 {
+		margin-top: 20px;
+		line-height: 36px;
+		font-size: 18px;
+		color: #F1A640;
+		text-align:left;
+		/* border-bottom: 1px solid #ccc; */
+
+		}
+		.spp01 {
+			margin-top: 10px;
+		line-height: 36px;
+		font-size: 18px;
+		color: #FAE54D;
+		text-align:left;
+		/* border-bottom: 1px solid #ccc; */
+
+		}
+
 </style>
