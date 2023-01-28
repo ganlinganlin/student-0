@@ -9,7 +9,7 @@ import china from "echarts/map/json/china.json"
 import qs from 'qs'
 import './http';
 import store from './store';
-
+import './api/mock'
 
 Vue.prototype.GLOBAL = global_;
 Vue.use(ElementUI);

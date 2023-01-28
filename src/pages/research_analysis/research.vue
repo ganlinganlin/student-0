@@ -597,7 +597,7 @@
 	<el-row>
 		<div class="fenge" >
 			<el-col :span="6">
-				<el-card class="boxcard">
+				<el-card class="boxcard2" :body-style="{padding:0}">
 					<div > 
 						<div class="tubiao"> 
 							<i  class="el-icon-zoom-in" ></i>
@@ -610,16 +610,16 @@
 								<span class="yu0">基于拓扑优化图卷积网络的网络表示学习方法研究</span>
 							</el-col>
 							<el-col :span="12" class="yu1">						
-								<span class="spp00">报告时间：</span>
+								<span class="spp000">报告时间：</span>
 							</el-col>
 							<el-col :span="12" class="yu2">						
-								<span class="spp01">男</span>
+								<span class="spp001">男</span>
 							</el-col>
 							<el-col :span="12" class="yu1">						
-								<span class="spp00">报告地点：</span>
+								<span class="spp000">报告地点：</span>
 							</el-col>
 							<el-col :span="12" class="yu2">						
-								<span class="spp01">24</span>
+								<span class="spp001">24</span>
 							</el-col>
 
 						</el-row>
@@ -630,7 +630,7 @@
 			</el-col>
 
 			<el-col :span="6">
-				<el-card class="boxcard">
+				<el-card class="boxcard2" :body-style="{padding:0}">
 					<div > 
 						<div class="tubiao"> 
 							<i  class="el-icon-help" ></i>
@@ -643,16 +643,16 @@
 								<span class="yu0">基于拓扑优化图卷积网络的网络表示学习方法研究</span>
 							</el-col>
 							<el-col :span="12" class="yu1">						
-								<span class="spp00">报告时间：</span>
+								<span class="spp000">报告时间：</span>
 							</el-col>
 							<el-col :span="12" class="yu2">						
-								<span class="spp01">男</span>
+								<span class="spp001">男</span>
 							</el-col>
 							<el-col :span="12" class="yu1">						
-								<span class="spp00">报告地点：</span>
+								<span class="spp000">报告地点：</span>
 							</el-col>
 							<el-col :span="12" class="yu2">						
-								<span class="spp01">24</span>
+								<span class="spp001">24</span>
 							</el-col>
 
 						</el-row>
@@ -663,7 +663,7 @@
 			</el-col>
 
 			<el-col :span="6">
-				<el-card class="boxcard">
+				<el-card class="boxcard2" :body-style="{padding:0}">
 					<div > 
 						<div class="tubiao"> 
 							<i   class="el-icon-circle-check" ></i>
@@ -676,16 +676,16 @@
 								<span class="yu0">基于拓扑优化图卷积网络的网络表示学习方法研究</span>
 							</el-col>
 							<el-col :span="12" class="yu1">						
-								<span class="spp00">报告时间：</span>
+								<span class="spp000">报告时间：</span>
 							</el-col>
 							<el-col :span="12" class="yu2">						
-								<span class="spp01">男</span>
+								<span class="spp001">男</span>
 							</el-col>
 							<el-col :span="12" class="yu1">						
-								<span class="spp00">报告地点：</span>
+								<span class="spp000">报告地点：</span>
 							</el-col>
 							<el-col :span="12" class="yu2">						
-								<span class="spp01">24</span>
+								<span class="spp001">24</span>
 							</el-col>
 
 						</el-row>
@@ -696,7 +696,7 @@
 			</el-col>
 
 			<el-col :span="6">
-				<el-card class="boxcard">
+				<el-card class="boxcard2" :body-style="{padding:0}">
 					<div > 
 						<div class="tubiao"> 
 							<i  class="el-icon-check" ></i>
@@ -709,16 +709,16 @@
 								<span class="yu0">基于拓扑优化图卷积网络的网络表示学习方法研究</span>
 							</el-col>
 							<el-col :span="12" class="yu1">						
-								<span class="spp00">报告时间：</span>
+								<span class="spp000">报告时间：</span>
 							</el-col>
 							<el-col :span="12" class="yu2">						
-								<span class="spp01">男</span>
+								<span class="spp001">男</span>
 							</el-col>
 							<el-col :span="12" class="yu1">						
-								<span class="spp00">报告地点：</span>
+								<span class="spp000">报告地点：</span>
 							</el-col>
 							<el-col :span="12" class="yu2">						
-								<span class="spp01">24</span>
+								<span class="spp001">24</span>
 							</el-col>
 
 						</el-row>
@@ -740,14 +740,17 @@
 		justify-content: center;
 
 	}
+/* 
 	.el-card__body{
 		padding:0;
-	}
+	} */
+
 	.elcol1 {
 		margin-top: 10px;
 
 	}
-	.boxcard{
+
+	.boxcard2{
 		width: 75%;
 		height: 320px;
 		background-color: #A24536;
@@ -818,7 +821,7 @@
 		margin-top: 20px;
 
 	}
-	.spp00 {
+	.spp000 {
 		margin-top: 20px;
 		line-height: 36px;
 		font-size: 18px;
@@ -827,8 +830,8 @@
 		/* border-bottom: 1px solid #ccc; */
 
 		}
-		.spp01 {
-			margin-top: 10px;
+		.spp001 {
+		margin-top: 10px;
 		line-height: 36px;
 		font-size: 18px;
 		color: #FAE54D;

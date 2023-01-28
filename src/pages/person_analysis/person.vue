@@ -186,7 +186,7 @@
 
 		<el-col :span="16">
 			<div class="num" >
-				<el-card @click="clickMenu(item)" class="el012" v-for="item in countData" :index="item.name" :key="item.key" :body-style="{display : 'flex'}">
+				<el-card @click="clickMenu(item)" class="el012" v-for="item in countData" :index="item.name" :key="item.key" :body-style="{display : 'flex', padding:0}">
 						
 						<i class="icon" :class="`el-icon-${item.icon}`" :style="{background:item.color}"></i>
 						<div class="detail">
@@ -220,6 +220,16 @@
 
 			</div>
 
+			<el-card class="card4" style="height:360px">
+
+				<el-main class="chart000" style="width: 100%;height: 360px;">
+
+				<div  id="tre01" style="width: 100%;height: 310px;">
+
+				</div>
+				</el-main>
+
+			</el-card>
 
 		</el-col>
   </el-row>
@@ -227,7 +237,9 @@
 </template>
 
 <script>
-import { getData } from '../../api'
+	import { getData } from '../../api'
+	import * as echarts from 'echarts';
+
 	export default {
 		data() {
 			return {
@@ -293,6 +305,168 @@ import { getData } from '../../api'
 		},
 
 		mounted() {
+
+		// 	var myChart = echarts.init(document.getElementById('tre01'));
+		// 	var option1 = {
+		// 	title: {
+		// 		text: 'Log Axis',
+		// 		left: 'center'
+		// 	},
+			
+		// 	tooltip: {
+		// 		trigger: 'axis'
+		// 	},
+		// 	legend: {
+		// 		data: ['max', 'min', 'average', 'mine']
+		// 	},
+		// 	grid: {
+		// 		left: '3%',
+		// 		right: '4%',
+		// 		bottom: '3%',
+		// 		containLabel: true
+		// 	},
+		// 	toolbox: {
+		// 		feature: {
+		// 		saveAsImage: {}
+		// 		}
+		// 	},
+		// // 	xAxis: {
+		// // 		type: 'category',
+		// // 		name: 'x',
+		// // 		// splitLine: { show: false },
+		// // 		data: ['成绩', '科研', '宿舍', '图书馆', '消费', '社交', '校园网']
+		// // },
+		// // 	yAxis: {
+		// // 		type: 'log',
+		// // 		name: 'y',
+		// // 		gridIndex:0
+		// // 		// ,
+		// // 		// minorSplitLine: {
+		// // 		// show: true
+		// // 		// }
+		// // 	},
+		// 	xAxis: {
+		// 		type: 'category',
+		// 		// boundaryGap: false,
+		// 		data: ['成绩', '科研', '宿舍', '图书馆', '消费', '社交', '校园网']
+		// 	},
+		// 	yAxis: {
+		// 		// type: 'value',
+		// 		gridIndex:0
+		// 	},
+			
+		// 	series: [
+		// 		{
+		// 		name: 'max',
+		// 		type: 'line',
+		// 		data: [820, 932, 901, 934, 1290, 1330, 1320],
+		// 		},
+		// 		{
+		// 		name: 'min',
+		// 		type: 'line',
+		// 		data: [345, 232, 201, 94, 129, 330, 420],
+		// 		},
+		// 		{
+		// 		name: 'average',
+		// 		type: 'line',
+		// 		data: [454, 594, 529, 930, 420, 732, 601],
+		// 		},
+		// 		{
+		// 		name: 'mine',
+		// 		type: 'line',
+		// 		data: [654, 632, 432, 501, 394, 529, 730],
+		// 		}
+		// 	]
+		// 	};
+		// 	option1 && myChart.setOption(option1);
+
+
+
+
+			var chartDom = document.getElementById('tre01');
+			var myChart = echarts.init(chartDom);
+			var option;
+
+			option = {
+			
+			title: {
+				text: '综合分数'
+			},
+			tooltip: {
+				trigger: 'axis'
+			},
+			legend: {
+				data: ['Max', 'Average', 'Min', 'Mine']
+			},
+			grid: {
+				left: '3%',
+				right: '3%',
+				bottom: '3%',
+				containLabel: true
+			},
+			toolbox: {
+				feature: {
+				saveAsImage: {}
+				}
+			},
+			xAxis: {
+				type: 'category',
+				boundaryGap: false,
+				data: ['成绩', '科研', '宿舍', '图书馆', '消费', '社交', '校园网']
+			},
+			yAxis: {
+				// type: 'value',
+				gridIndex : 0,
+				scale:true
+			},
+			series: [
+				{
+				name:'Max',
+				// stack:'Total',
+				data: [94, 93, 92, 94, 94, 98, 97],
+				seriesLayoutBy: 'row',
+				type: 'line',
+				emphasis: { focus: 'series' },
+				smooth: true
+				},
+
+				{
+				name:'Average',
+				// stack:'Total',
+				data: [63, 71, 67, 74, 69, 73, 69],
+				seriesLayoutBy: 'row',
+				type: 'line',
+				emphasis: { focus: 'series' },
+				smooth: true
+				},
+				{
+				name:'Min',
+				// stack:'Total',
+				data: [39, 49, 39, 51, 44, 28, 29],
+				seriesLayoutBy: 'row',
+				type: 'line',
+				emphasis: { focus: 'series' },
+				smooth: true
+				},
+				{
+				name:'Mine',
+				// stack:'Total',
+				data: [91, 81, 87, 84, 79, 83, 89],
+				seriesLayoutBy: 'row',
+				type: 'line',
+				emphasis: { focus: 'series' },
+				smooth: true
+				}
+			]
+			};
+			option && myChart.setOption(option);
+
+			// var chartDom = document.getElementById('tre1');
+			// var myChart = echarts.init(chartDom);
+			// var option;
+			
+
+
 			getData().then((data) => {
 				console.log(data)
 			})
@@ -408,7 +582,7 @@ import { getData } from '../../api'
 		display: flex;
 		align-items: center;
 		padding-bottom: 20px;
-		margin-bottom: 20px;
+		margin-bottom: 15px;
 		border-bottom: 1px solid #ccc;
 	}
 
@@ -478,7 +652,7 @@ import { getData } from '../../api'
 
 		.num {
 			display: flex;
-			justify-content: space-between;
+			/* justify-content: space-between; */
 
 			/* justify-content: center; */
 
@@ -486,22 +660,24 @@ import { getData } from '../../api'
 		.el012 {
 			width: 50%;
 			margin-bottom: 20px;
-			margin-left: 60px;
+			margin-left: 50px;
 			margin-right: 10px;
-			border-radius: 3%;
-			padding:0;
+			/* border-radius: 1%; */
+			/* padding:0; */
 		}
 		.el2 {
 			width: 50%;
+			margin-top: 15px;
 			margin-bottom: 20px;
-			margin-left: 60px;
+			margin-left: 50px;
 			margin-right: 10px;
 
 		}
 		.el3 {
 			width: 32%;
+			margin-top: 15px;
 			margin-bottom: 20px;
-			margin-left: 60px; 
+			margin-left: 50px; 
 			margin-right: 10px;
 			justify-content: center;
 
@@ -535,5 +711,13 @@ import { getData } from '../../api'
 			line-height: 30px;
 			height: 30px;
 			text-align: left;
+		}
+		.card4 {
+			margin-top: 8px;
+			margin-bottom: 20px;
+			margin-left: 50px;
+			margin-right: 10px;
+			border-radius: 2%;
+			padding:0;
 		}
 </style>
