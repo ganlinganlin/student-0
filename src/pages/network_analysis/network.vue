@@ -63,7 +63,7 @@
 				</div>
 			</el-card >
 			
-			<el-card class="box-card1" style="width: 500px;height: 380px;">
+			<el-card class="box-card1" >
 				<div  id="tre03" style="width: 480px;height: 400px;">
 
 				</div>
@@ -430,6 +430,7 @@ option && myChart.setOption(option);
 		border-radius: 3%;
 		margin-top: 30px;
 		padding:20px;
+		height: 380px;
 	}
 	.user {
 		display: flex;
