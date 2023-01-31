@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+import login from '../pages/login.vue'
 
 Vue.use(Router)
 
@@ -16,14 +16,17 @@ function route (path, file, name, children) {
 
 export default new Router({
   routes: [
-    route("/",'/layout',"vlayout"),// /login路径，	
+    // route("/",'/layout',"vlayout"),// /login路径，
+    // //  route("/login",'/login',"vlogin"),// /login路径，
     {
-      path:"/person", // 根路径，路由到 Layout组件
+      path:"/", // 根路径，路由到 Layout组件
       component: () => import('../pages/layout'),
 
       redirect:"/person",
       children:[ // 其它所有组件都是 Layout的子组件
-		    //route("/index/dashboard",'/Dashboard',"Dashboard"), //主页
+		    route("/dashboard",'/Dashboard',"Dashboard"), //主页
+        route("/login",'/login',"vlogin"),	
+
         route("/person",'/person_analysis/person',"person"), //基本信息
         route("/score",'/score_analysis/score',"score"), //成绩
 
@@ -40,7 +43,15 @@ export default new Router({
         //route("/index/dashboard1",'/Dashboard1',"Dashboard1") //主页
 
       ]
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../pages/login.vue')
     }
 
   ]
+
 })
+
+

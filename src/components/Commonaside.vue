@@ -211,8 +211,8 @@
         clickMenu(item) {
           if(this.$route.path !== item.path && !(this.$route.path == '/person'&& (item.pah == '/'))){
             this.$router.push(item.path)
-
           }
+          this.$store.commit('selectMenu', item)
           
         }
 

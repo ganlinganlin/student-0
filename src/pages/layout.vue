@@ -41,8 +41,10 @@
 				<el-header >
 					<commonheader />
 				</el-header>
+				<commontag />
+
 				<el-main >
-					Main
+					<!-- Main -->
 					<router-view></router-view>
 				</el-main>
 			</el-container>
@@ -54,6 +56,8 @@
 <script>
 	import commonaside from '../components/Commonaside.vue';
 	import commonheader from '../components/Commonheader.vue';
+	import commontag from '../components/Commontag.vue';
+
 
 	export default {
 		name: "vlayout",
@@ -64,7 +68,8 @@
 	    },
 		components: {
 			commonaside,
-			commonheader
+			commonheader,
+			commontag
 
 		},
 	    methods: {

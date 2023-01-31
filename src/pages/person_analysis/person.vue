@@ -186,9 +186,11 @@
 
 		<el-col :span="16">
 			<div class="num" >
-				<el-card @click="clickMenu(item)" class="el012" v-for="item in countData" :index="item.name" :key="item.key" :body-style="{display : 'flex', padding:0}">
+				<el-card  class="el012" v-for="item in countData" :index="item.name" :key="item.key" :body-style="{display : 'flex', padding:0}"
+				@click.native="changeMenu(item)"
+				>
 						
-						<i class="icon" :class="`el-icon-${item.icon}`" :style="{background:item.color}"></i>
+						<i class="icon" :class="`el-icon-${item.icon}`" :style="{background:item.color}" ></i>
 						<div class="detail">
 							<p class="valuee">{{ item.value }}</p>
 							<p class="keyy">{{ item.key }}</p>
@@ -292,13 +294,9 @@
 			}
 		},
 		methods: {
-			clickMenu(item) {
-          if(this.$route.path !== item.path && !(this.$route.path == '/person'&& (item.pah == '/'))){
-            this.$router.push(item.path)
-
-          }
-          
-        }
+            changeMenu(item) {
+                this.$router.push({name: item.name})
+            }
 		},
 		components: {
 
@@ -379,7 +377,7 @@
 		// 	]
 		// 	};
 		// 	option1 && myChart.setOption(option1);
-
+// console.log(item, 'item')
 
 
 

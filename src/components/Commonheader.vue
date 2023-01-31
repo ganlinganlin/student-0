@@ -7,10 +7,16 @@
             <el-button @click="handleMenu" class="button1" icon="el-icon-menu"  size="mini"></el-button>
             <span class="text">河工画像</span>
             <span class="text1">——研究生个人画像系统</span>
+
+            <!-- <el-breadcrumb separator="/">
+            <el-breadcrumb-item v-for="item in tags" :key="item.path" :to="{ path: item.path }">{{item.label}}</el-breadcrumb-item>
+
+            </el-breadcrumb> -->
+
         </div>
         <div class="r-content">
-            <span class="text2">某某某</span>
-            <span class="text3">您好，欢迎使用本系统！</span>
+            <span class="text2" style="margin-right: 12px">某某某</span>
+            <span class="text3" style="margin-right: 6px">您好，欢迎使用本系统！</span>
 
             <el-dropdown>
                 <span class="el-dropdown-link">
@@ -31,6 +37,8 @@
 
 
 <script>
+    import { mapState } from 'vuex';
+
   export default {
     data() {
       return {
@@ -41,6 +49,11 @@
         handleMenu() {
             this.$store.commit('collapseMenu')
         }
+    },
+    computed: {
+        ...mapState({
+            tags:state => state.tab.tabsList
+        })
     }
 
   }

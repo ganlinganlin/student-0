@@ -596,7 +596,8 @@
 
 	<el-row>
 		<div class="fenge" >
-			<el-col :span="6">
+			<el-col :span="12">
+			<el-col :span="12">
 				<el-card class="boxcard2" :body-style="{padding:0}">
 					<div > 
 						<div class="tubiao"> 
@@ -629,7 +630,7 @@
 				
 			</el-col>
 
-			<el-col :span="6">
+			<el-col :span="12">
 				<el-card class="boxcard2" :body-style="{padding:0}">
 					<div > 
 						<div class="tubiao"> 
@@ -662,8 +663,8 @@
 				
 			</el-col>
 
-			<el-col :span="6">
-				<el-card class="boxcard2" :body-style="{padding:0}">
+			<el-col :span="12">
+				<el-card class="boxcard3" :body-style="{padding:0}">
 					<div > 
 						<div class="tubiao"> 
 							<i   class="el-icon-circle-check" ></i>
@@ -695,8 +696,8 @@
 				
 			</el-col>
 
-			<el-col :span="6">
-				<el-card class="boxcard2" :body-style="{padding:0}">
+			<el-col :span="12">
+				<el-card class="boxcard3" :body-style="{padding:0}">
 					<div > 
 						<div class="tubiao"> 
 							<i  class="el-icon-check" ></i>
@@ -727,11 +728,143 @@
 				</el-card >
 				
 			</el-col>
+		</el-col>
+		<el-col :span="12">
+
+			<el-card class="box-card000" style="width: 600px;height: 280px;">
+				<div class="tre02">
+
+				<div  id="tre02" style="height: 280px;">
+
+				</div>
+				</div>
+			</el-card >
+			
+			<el-card class="box-card001" style="width: 600px;height: 360px;">
+				<div  id="tre03" style="height: 360px;">
+
+				</div>
+
+			</el-card >
+
+
+		</el-col>
+
 		</div>
   </el-row>
 	
 </template>
 
+<script>
+	import * as echarts from 'echarts';
+
+	export default {
+		data() {
+			return {
+
+
+			}
+		},
+		methods: {
+            changeMenu(item) {
+                this.$router.push({name: item.name})
+            }
+		},
+		components: {
+
+		},
+
+		mounted() {
+
+
+			var chartDom = document.getElementById('tre02');
+			var myChart = echarts.init(chartDom);
+			var option;
+
+			option = {
+			tooltip: {
+				formatter: '{a} <br/>{b} : {c}%'
+			},
+			series: [
+				{
+				name: 'Pressure',
+				type: 'gauge',
+				progress: {
+					show: true
+				},
+				detail: {
+					valueAnimation: true,
+					formatter: '{value}'
+				},
+				data: [
+					{
+					value: 88,
+					name: 'SCORE'
+					}
+				]
+				}
+			]
+			};
+
+			option && myChart.setOption(option);
+
+
+
+			var chartDom = document.getElementById('tre03');
+			var myChart = echarts.init(chartDom);
+			var option;
+
+			option = {
+			tooltip: {
+				trigger: 'item'
+			},
+			legend: {
+				top: '5%',
+				left: 'center'
+			},
+			series: [
+				{
+				name: 'Access From',
+				type: 'pie',
+				radius: ['40%', '70%'],
+				avoidLabelOverlap: false,
+				itemStyle: {
+					borderRadius: 10,
+					borderColor: '#fff',
+					borderWidth: 2
+				},
+				label: {
+					show: false,
+					position: 'center'
+				},
+				emphasis: {
+					label: {
+					show: true,
+					fontSize: 40,
+					fontWeight: 'bold'
+					}
+				},
+				labelLine: {
+					show: false
+				},
+				data: [
+					{ value: 1048, name: 'Search Engine' },
+					{ value: 735, name: 'Direct' },
+					{ value: 580, name: 'Email' },
+					{ value: 484, name: 'Union Ads' },
+					{ value: 300, name: 'Video Ads' }
+				]
+				}
+			]
+			};
+
+			option && myChart.setOption(option);
+
+
+			
+		}
+	}
+</script>
 
 
 
@@ -749,13 +882,42 @@
 		margin-top: 10px;
 
 	}
+	.box-card000 {
+		border-radius: 3%;
+		 padding:20px;
+		 height: 260px;		
+		 margin-top: 10px;
+		 margin-left: 60px;
 
+	}
+	.box-card001 {
+		border-radius: 3%;
+		margin-top: 10px;
+		padding:20px;
+		margin-left: 60px;
+
+	}
 	.boxcard2{
 		width: 75%;
 		height: 320px;
 		background-color: #A24536;
 		margin: auto;
+		margin-top: 20px;
+
+		border-radius: 6%;
+
 	}
+	
+	.boxcard3{
+		width: 75%;
+		height: 320px;
+		background-color: #A24536;
+		margin-top: 30px;
+		margin-left: 50px;
+		border-radius: 6%;
+
+	}
+
 	.tubiao{
 		height: 100px;
 		background-color: #BE4E3A;
